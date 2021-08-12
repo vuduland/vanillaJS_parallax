@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  height: 100vh;
+  /* vh === viewport height */
+  font-size: 5em;
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+
+section {
+  height: 100%;
+}
+
+ul {
+  list-style-type: none; /* none gets rid of bullet points */
+  padding: 0; /* get rid of any default padding */
+  margin: 0; /* get rid of any default margin */
+  display: grid; /* using grid, could use flexbox instead, to center the li elements 'par' 'al' 'lax' vertically and horizontally*/
+  grid-template-columns: repeat(3, auto); /* part of the grid display options */
+  justify-content: center;
+  align-items: inherit;
+  place-items: center;
+  height: 100vh;
+}
+
+span {
+  width: 110px;
+  height: 110px;
+  position: absolute; /* allows bottom and left to be the values of the span on xy grid */
+  bottom: 0; /* puts the circle at the bottom */
+  left: 0; /* puts the circle at the left */
+  background: black;
+  border-radius: 50%; /* border radius makes the span box a circle*/
+}
