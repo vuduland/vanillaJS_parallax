@@ -12,10 +12,15 @@
       <ul>
         <li class="scroll" data-rate="-2" data-direction="vertical">par</li>
         <li>al</li>
-        <li class="scroll" data-rate="2">lax</li>
+        <li class="scroll" data-rate="2" data-direction="vertical">lax</li>
       </ul>
 
-      <span class="scroll" data-rate="2" data-direction="horizontal"></span>
+      <span
+        class="scroll"
+        data-rateY="1"
+        data-rateX="2"
+        data-direction="horizontal"
+      ></span>
     </section>
 
     <section></section>
@@ -28,8 +33,15 @@
           length = target.length;
         for (index; index < length; index++) {
           let pos = window.pageYOffset * target[index].dataset.rate;
-
-          target[index].style.transform = `translate3d(0px, ${pos}px, 0px)`;
+          if (target[index].dataset.direction === "vertical") {
+            target[index].style.transform = `translate3d(0px, ${pos}px, 0px)`;
+          } else {
+            let posX = window.pageYOffset * target[index].dataset.ratex;
+            let posY = window.pageYOffset * target[index].dataset.ratey;
+            target[
+              index
+            ].style.transform = `translate3d(${posX}px, ${posY}px, 0px)`;
+          }
         }
       });
     </script>
